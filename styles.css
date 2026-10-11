@@ -3900,3 +3900,91 @@ body:has(.site-header)::after{
   .top-leaderboard .leader-podium{grid-template-columns:1fr!important}
   .podium-card{min-height:125px!important}
 }
+
+
+/* Mobile usability improvements */
+@media (max-width: 760px) {
+  html { scroll-padding-top: 12px; }
+  body { overflow-x: hidden; }
+  .navbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    padding: 12px 0;
+    min-height: auto;
+  }
+  .logo { font-size: 1.2rem; }
+  .stats-badge {
+    min-width: 0;
+    margin: 0;
+    gap: 2px;
+    padding: 3px;
+    justify-self: end;
+  }
+  .stat-item {
+    min-height: 38px;
+    padding: 0 7px;
+    gap: 4px;
+  }
+  .stat-item strong { font-size: .78rem; }
+  .nav-links {
+    display: flex;
+    grid-column: 1 / -1;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 4px 0 7px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav-links a {
+    flex: 0 0 auto;
+    padding: 8px 11px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: .82rem;
+    white-space: nowrap;
+  }
+  .logout-button { grid-column: 1 / -1; justify-self: start; }
+  .container { width: min(100% - 32px, 1120px); }
+  .hero { min-height: 0; gap: 26px; padding: 38px 0 30px; }
+  h1 { font-size: clamp(2.15rem, 10vw, 3.3rem); letter-spacing: -1.2px; overflow-wrap: anywhere; }
+  .hero-text { margin: 16px 0 22px; font-size: 1rem; }
+  .hero-card { padding: 23px; }
+  .section { padding: 28px 0 48px; }
+  .section-heading h2, .progress-section h2 { font-size: 1.55rem; }
+  .material-grid { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .material-card { padding: 20px; min-width: 0; }
+  .progress-section { gap: 18px; margin-bottom: 42px; padding: 22px; }
+  .account-section { width: calc(100% - 32px); margin: 18px auto 42px; padding: 25px 18px; }
+  .account-section .section-heading h2 { font-size: 1.65rem; }
+  .account-form input { min-height: 46px; font-size: 16px; }
+  .button, .complete-button, .filter-button, .mini-action { min-height: 44px; }
+  .filter-buttons { gap: 8px; }
+  .filter-button { padding: 9px 12px; }
+  .lesson-modal { padding: 10px; align-items: end; }
+  .lesson-window { width: 100%; max-height: 92dvh; padding: 28px 18px 20px; border-radius: 18px 18px 10px 10px; }
+  .lesson-window h2 { padding-right: 26px; font-size: 1.45rem; }
+  .lesson-window pre { max-width: 100%; font-size: .82rem; white-space: pre; }
+  .site-footer { padding: 22px 16px; }
+  .dashboard-grid, .achievement-grid, .subjects-grid, .projects-grid { grid-template-columns: minmax(0, 1fr) !important; }
+  .luxury-learning-ad { min-height: 690px !important; }
+  .luxury-ad-panel { top: 105px !important; right: 12px !important; width: calc(100% - 24px) !important; }
+}
+@media (max-width: 380px) {
+  .navbar { width: calc(100% - 24px); }
+  .stat-item { padding: 0 5px; }
+  .stats-badge { gap: 0; }
+  .container { width: calc(100% - 24px); }
+  .hero-card { padding: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
