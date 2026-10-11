@@ -1084,3 +1084,220 @@ body::before{
     transition-duration:.001ms!important;
   }
 }
+
+
+/* =========================================
+   STUDY4U MOBILE REPAIR — Oct 2026
+   Keep the existing design and functionality;
+   make the layout fit small touch screens.
+   ========================================= */
+@media (max-width: 760px) {
+  html, body { max-width: 100%; overflow-x: clip !important; }
+  body { font-size: 16px; }
+  main, header, footer, section, .container { min-width: 0; }
+  .container { width: calc(100% - 28px) !important; max-width: 100% !important; }
+
+  .site-header { position: sticky; top: 0; z-index: 100; }
+  .navbar {
+    width: calc(100% - 24px) !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    gap: 9px !important;
+    padding: 10px 0 !important;
+  }
+  .logo { min-width: 0; font-size: 1.2rem !important; }
+  .stats-badge {
+    max-width: 100%;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 3px !important;
+    padding: 3px !important;
+  }
+  .stat-item { min-width: 0 !important; gap: 4px !important; padding: 5px 7px !important; font-size: .75rem !important; }
+  .stat-label { display: none !important; }
+  .stats-status { display: none !important; }
+  .nav-links {
+    grid-column: 1 / -1 !important;
+    display: flex !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 7px !important;
+    overflow-x: auto !important;
+    overscroll-behavior-x: contain;
+    padding: 3px 0 7px !important;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    font-size: .72rem !important;
+    letter-spacing: .06em !important;
+    padding: 9px 11px !important;
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logout-button { grid-column: 1 / -1; justify-self: start; }
+
+  .top-leaderboard { width: calc(100% - 28px) !important; margin-top: 14px !important; }
+  .top-leaderboard .leader-podium { width: 100% !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 7px !important; }
+  .podium-card { min-width: 0 !important; min-height: 115px !important; padding: 12px 7px !important; overflow-wrap: anywhere; }
+  .podium-card strong { font-size: .92rem !important; }
+  .podium-card b { font-size: .76rem !important; }
+
+  .hero {
+    width: calc(100% - 28px) !important;
+    min-height: 0 !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 22px !important;
+    padding: 44px 0 24px !important;
+    margin: 0 auto !important;
+  }
+  .hero > div, .hero > div:first-child { min-width: 0; }
+  .hero h1 { font-size: clamp(2.65rem, 12.8vw, 5rem) !important; line-height: .98 !important; letter-spacing: -.055em !important; overflow-wrap: anywhere; }
+  .hero-text { max-width: 100% !important; font-size: 1rem !important; line-height: 1.65 !important; }
+  .hero-card { min-width: 0 !important; padding: 21px !important; border-radius: 20px !important; }
+  .hero-card h2 { font-size: 1.45rem !important; }
+
+  .achievements-section, .progress-section, .learning-dashboard, .streak-hero,
+  .weekly-section, .subjects-section, .continue-section, .challenge-section,
+  .section, .power-section, .analytics-section, .skill-section,
+  .projects-section, .leaderboard-section, .master-quote {
+    margin-top: 48px !important;
+    margin-bottom: 48px !important;
+  }
+  .section-heading { min-width: 0; margin-bottom: 22px !important; }
+  .section-heading h2, .progress-section h2, .dashboard-heading h2,
+  .weekly-card h2, .challenge-card h2, .continue-card h2,
+  .power-section h2, .analytics-section h2, .skill-section h2,
+  .projects-section h2, .leaderboard-section h2, .account-section h2 {
+    font-size: clamp(1.7rem, 7vw, 2.5rem) !important;
+    line-height: 1.08 !important;
+    overflow-wrap: anywhere;
+  }
+  .section-heading p, .hero-text, .continue-card p, .challenge-card p,
+  .weekly-card p, .streak-copy p { line-height: 1.6; }
+
+  .account-section { width: calc(100% - 28px) !important; max-width: 560px; margin: 34px auto !important; padding: 23px 18px !important; }
+  .account-form { width: 100%; }
+  .account-form input, .account-form select, .account-form textarea,
+  .search-box input, input, select, textarea { max-width: 100%; font-size: 16px !important; }
+  .account-form input { min-height: 48px !important; }
+  .button, .outline-button, .complete-button, .mini-action,
+  .power-button, .github-promo-button, .luxury-ad-button {
+    min-height: 46px;
+    touch-action: manipulation;
+  }
+
+  .progress-section, .streak-hero, .weekly-card, .continue-card, .challenge-card {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+    padding: 20px !important;
+    min-width: 0 !important;
+  }
+  .clock-box, .streak-stats { width: 100%; min-width: 0; }
+  .streak-stats { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; }
+  .weekly-ring { justify-self: start; }
+  .dashboard-heading { display: flex !important; align-items: flex-start !important; flex-wrap: wrap !important; gap: 12px !important; }
+  .dashboard-grid, .achievement-grid, .subject-grid, .subjects-grid,
+  .dashboard-grid, .analytics-grid, .skill-tree-grid, .project-grid,
+  .projects-grid, .power-actions, .power-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 11px !important;
+  }
+  .dashboard-card, .achievement-card, .subject-card, .analytics-card,
+  .skill-node, .project-card, .power-button { min-width: 0 !important; padding: 15px !important; overflow-wrap: anywhere; }
+  .subject-card { min-height: 115px; }
+  .dashboard-card strong, .analytics-card strong { overflow-wrap: anywhere; }
+  .continue-card > *, .challenge-card > *, .weekly-card > *,
+  .progress-section > *, .streak-hero > * { min-width: 0; }
+  .continue-card .button, .challenge-card .outline-button { width: 100%; }
+
+  .lessons-heading { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 16px !important; }
+  .search-box { width: 100% !important; min-width: 0 !important; }
+  .search-box input { width: 100% !important; min-width: 0 !important; }
+  .filter-buttons { display: flex !important; flex-wrap: wrap !important; gap: 7px !important; }
+  .filter-button { flex: 1 1 calc(33.333% - 7px) !important; min-width: 0 !important; padding: 10px 6px !important; font-size: .78rem !important; }
+  .level-roadmap { min-width: 0; max-width: 100%; overflow-x: auto; }
+  .learning-layout { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 22px !important; min-width: 0; }
+  .material-grid { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 12px !important; min-width: 0; }
+  .material-card { width: 100%; min-width: 0 !important; padding: 18px !important; }
+  .lesson-subject-toggle { display: flex !important; flex-wrap: wrap !important; gap: 10px !important; padding: 14px !important; min-height: 68px !important; }
+  .lesson-subject-name { min-width: 0; flex: 1 1 150px; }
+  .lesson-subject-name strong { font-size: 1rem !important; overflow-wrap: anywhere; }
+  .lesson-subject-progress { max-width: 100%; }
+  .luxury-learning-ad { width: 100% !important; min-width: 0 !important; min-height: 0 !important; height: auto !important; padding-bottom: 16px !important; }
+  .luxury-ad-panel { position: relative !important; inset: auto !important; width: calc(100% - 24px) !important; margin: 90px auto 12px !important; }
+  .luxury-ad-options { min-width: 0; }
+  .luxury-option { min-width: 0; gap: 8px; }
+  .luxury-option > div { min-width: 0; }
+  .luxury-option strong, .luxury-option small { overflow-wrap: anywhere; }
+  .luxury-ad-caption { padding: 0 12px; }
+
+  .leaderboard-card, .feature-dialog { min-width: 0 !important; max-width: 100% !important; }
+  .leader-row { grid-template-columns: 30px minmax(0, 1fr) auto !important; gap: 7px !important; }
+  .leader-row small { overflow-wrap: anywhere; }
+  .feature-modal { padding: 10px !important; }
+  .feature-dialog { width: 100% !important; max-height: 90dvh !important; overflow-y: auto !important; padding: 22px 16px !important; }
+  .lesson-modal { padding: 8px !important; align-items: end !important; }
+  .lesson-window { width: 100% !important; max-width: 100% !important; max-height: 90dvh !important; overflow: auto !important; padding: 25px 16px 18px !important; }
+  .lesson-window pre, pre, code { max-width: 100%; }
+  .lesson-window pre { overflow-x: auto !important; white-space: pre !important; }
+
+  .github-promo { padding: 44px 20px !important; }
+  .github-promo-content { width: 100% !important; max-width: 100% !important; }
+  .github-promo h2 { font-size: clamp(1.8rem, 8vw, 2.8rem) !important; }
+  .github-promo-button { max-width: 100%; }
+  .site-footer { padding: 25px 16px !important; text-align: center; }
+  img, video, canvas, svg, iframe { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .container, .hero, .top-leaderboard { width: calc(100% - 22px) !important; }
+  .navbar { width: calc(100% - 20px) !important; }
+  .logo { font-size: 1.05rem !important; }
+  .stats-badge { max-width: 185px; }
+  .stat-item { padding: 5px 6px !important; }
+  .top-leaderboard .leader-podium { grid-template-columns: minmax(0, 1fr) !important; }
+  .podium-card { min-height: 86px !important; }
+  .hero { padding-top: 32px !important; }
+  .hero h1 { font-size: clamp(2.35rem, 12vw, 3.5rem) !important; }
+  .dashboard-grid, .achievement-grid, .subject-grid, .subjects-grid,
+  .analytics-grid, .skill-tree-grid, .project-grid, .projects-grid,
+  .power-actions, .power-grid { grid-template-columns: minmax(0, 1fr) !important; }
+  .dashboard-card, .achievement-card, .subject-card, .analytics-card,
+  .skill-node, .project-card, .power-button { padding: 16px !important; }
+  .filter-button { flex-basis: calc(50% - 7px) !important; }
+  .streak-stats { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .luxury-ad-panel { margin-top: 65px !important; }
+  .luxury-ad-panel-head { flex-wrap: wrap; gap: 8px; }
+  .luxury-ad-copy { line-height: 1.55; }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .material-card:hover, .subject-card:hover, .power-button:hover,
+  .skill-node:hover, .project-card:hover, .hero-card:hover,
+  .dashboard-card:hover, .streak-hero:hover, .weekly-card:hover,
+  .continue-card:hover, .challenge-card:hover, .analytics-card:hover,
+  .achievement:hover, .podium-card:hover {
+    transform: none !important;
+  }
+  .button::after, .outline-button::after, .filter-button::after,
+  .complete-button::after, .logout-button::after, .stat-button::after,
+  .power-button::after, .github-promo-button::after, .luxury-ad-button::after {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 760px), (prefers-reduced-motion: reduce) {
+  body::before { animation: none !important; }
+}
