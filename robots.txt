@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aj-8a.github.io/study4u/sitemap.xml
